@@ -609,7 +609,7 @@ export function anthropicToOpenAIResponse(body: Json, model: string): Json {
     choices: [{ index: 0, message, finish_reason: anthropicStopToOpenAI(body.stop_reason), logprobs: null }],
     usage: {
       prompt_tokens: numberOrZero(usage.input_tokens),
-      completion_tokens: numberOrZero(usage.completion_tokens),
+      completion_tokens: numberOrZero(usage.output_tokens),
       total_tokens: numberOrZero(usage.input_tokens) + numberOrZero(usage.output_tokens),
     },
   };
